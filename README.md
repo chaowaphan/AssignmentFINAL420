@@ -1,7 +1,5 @@
 # FreeMagga Manager
 
-> Vue.js app to manage employees that uses FireStore as a backend.
-
 ## Build Setup
 
 ``` bash
