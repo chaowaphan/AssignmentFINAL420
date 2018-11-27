@@ -4,21 +4,25 @@
         <div class="container">
           <router-link to="/" class="brand-logo">FreeManga</router-link>    
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
+           <ul class="right hide-on-med-and-down">
             <li v-if="isLoggedIn"><span class="email black-text">{{currentUser}}</span></li>
-            <li v-if="isLoggedIn"><router-link to="/">Dashboard</router-link></li>
+            <li v-if="isLoggedIn"><router-link to="/review">Profile</router-link></li>
+            <li v-if="isLoggedIn">
+                <button type="button" class="btn btn-default btn-lg" @click="goAdd">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true" ></span> Add
+                </button>
+            </li>
             <li v-if="!isLoggedIn"><router-link to="/login">Login</router-link></li>
             <li v-if="!isLoggedIn"><router-link to="/register">Register</router-link></li>
-             <li v-if="isLoggedIn"><button v-on:click="logout" class="btn black">Logout</button></li>
+            <li v-if="isLoggedIn"><button v-on:click="logout" class="btn black">Logout</button></li>
              
           </ul>
           <ul class="side-nav" id="mobile-demo">
-            <li v-if="isLoggedIn"><router-link to="/">Dashboard</router-link></li>
+            <li v-if="isLoggedIn"><router-link to="/review">Profile</router-link></li>
             <li v-if="!isLoggedIn"><router-link to="/login">Login</router-link></li>
             <li v-if="!isLoggedIn"><router-link to="/register">Register</router-link></li>
             <li><a href="#" class="divider"></a></li>
              <li v-if="isLoggedIn"><button v-on:click="logout" class="btn">Logout</button></li>
-           
           </ul>
         </div>
       </div>
@@ -49,6 +53,11 @@ export default {
         .then(() => {
           this.$router.go({ path: this.$router.path });
         });
+    },
+     goAdd: function () {
+      this.$router.go({ path: '/review'})
+      //router.push({ path: this.$router.path })
+      console.log("YES");
     }
   }
 };

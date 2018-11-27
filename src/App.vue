@@ -10,12 +10,14 @@
 <script>
 import Navbar from './components/Navbar';
 import NewEmployee from './components/NewEmployee';
+import Review from './components/Review';
 
 export default {
   name: 'app',
   components: {
     Navbar,
-    NewEmployee
+    NewEmployee,
+    Review
   }
 };
 </script>

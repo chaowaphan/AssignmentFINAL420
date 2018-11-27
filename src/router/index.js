@@ -6,6 +6,7 @@ import NewEmployee from '@/components/NewEmployee';
 import EditEmployee from '@/components/EditEmployee';
 import Login from '@/components/Login';
 import Register from '@/components/Register';
+import Review from '@/components/Review';
 import firebase from 'firebase';
 
 Vue.use(Router);
@@ -59,6 +60,12 @@ let router = new Router({
       meta: {
         requiresAuth: true
       }
+    },
+    {
+      path: '/review',
+      component: 'review',
+      component: Review,
+      meta: {requiresAuth: true}
     }
   ]
 });
